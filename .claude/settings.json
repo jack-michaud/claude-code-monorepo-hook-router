@@ -1,10 +1,4 @@
 {
-  "permissions": {
-    "additionalDirectories": [
-      "./ui/",
-      "./backend/"
-    ]
-  },
   "hooks": {
     "PostToolUse": [
       {

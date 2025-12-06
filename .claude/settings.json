@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "./ui/",
+      "./backend/"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ./.claude/hooks/monorepo-router.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

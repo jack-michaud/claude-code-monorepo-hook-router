@@ -4,6 +4,17 @@
 
 > Each hook is defined in their respective subdirectory!
 
+```
+ui/.claude
+├── scripts
+│   └── prettier-hook.sh
+└── settings.json
+backend/.claude
+├── scripts
+│   └── ruff-hook.sh
+└── settings.json
+```
+
 ## The Problem
 
 If you're using Claude Code in a monorepo, you've probably hit this wall: hooks only execute from the directory where you invoked Claude Code. Want to trigger `ui/` formatting hooks when working from the parent directory? Too bad. Claude Code only looks for hooks in `$CWD/.claude`, not in subdirectories.
@@ -70,7 +81,7 @@ Instead of hard coding hook paths, create a router that dynamically discovers an
 
 ![Hook Router Demo](t-rec.gif)
 
-> Each hook is defined in their respective subdirectory!
+This is also backwards compatible with running from the subproject directories.
 
 ### Implementation
 
